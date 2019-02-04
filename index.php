@@ -52,5 +52,8 @@
     <footer>
         
     </footer>
+        <?php 
+        // wp_footer() affiche la barre de personnalisation wordpress dans le back-office
+        wp_footer();?>
 </body>
 </html>
