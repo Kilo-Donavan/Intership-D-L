@@ -24,23 +24,37 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <header>
-        <div class="container">
-            <a class="logo" href="<?php bloginfo('wpurl') ?>">
-                <?php bloginfo('name') ?>
-            </a>
-            <a href="#navigation" class="burger" aria-label="Ouvrir le menu">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </a>
-            <nav>
+    <header class="banner">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary" role="navigation">
+                
+                    <?php 
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+$image = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );?>
+                   <a class="nabar-brand" href="<?php bloginfo('url'); ?>"><img src="<?php echo $image[0];?>" alt=""></a>
+                    
+                    <span class="nabvar-text text-light"><?php bloginfo('description'); ?></span>
+                    
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-target" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                
+                    
                 <?php 
                     $menuParameters =  array(
-                        'theme_location' => 'header', // Le menu à afficher
-                        'container'       => false,
-                        'items_wrap'      => '%3$s', // génère chaque item avec les li
+                        'theme_location' => 'header',
+                        'depth'           => 2,
+                        'walker'          => new WP_Bootstrap_Navwalker(),
+                        'container_class'   => 'collapse navbar-collapse',
+                        'container_id'      => 'nav-target',
+                        'menu_class'        => 'navbar-nav ml-auto'
                     );
                     echo wp_nav_menu( $menuParameters );
                 ?>
+                
+                
             </nav>
-        </div>
+        
+            
+            
+            
     </header>

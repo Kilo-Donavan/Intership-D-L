@@ -1,8 +1,8 @@
 <?php get_header() ;?>
-  <main>
+  <main class="container">
     <header>
       <?php //the_custom_header_markup() ?>
-      <h1><?php single_cat_title() ?></h1>
+      <h1 class="align-center"><?php single_cat_title() ?></h1>
     </header>
     <?php
       // Si il y a des articles à afficher
