@@ -38,7 +38,6 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );?>
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 
-                    
                 <?php 
                     $menuParameters =  array(
                         'theme_location' => 'header',
@@ -46,11 +45,15 @@ $image = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );?>
                         'walker'          => new WP_Bootstrap_Navwalker(),
                         'container_class'   => 'collapse navbar-collapse',
                         'container_id'      => 'nav-target',
-                        'menu_class'        => 'navbar-nav ml-auto'
+                        'menu_class'        => 'navbar-nav ml-auto',
+                        'menu_id'           => 'menu',
                     );
                     echo wp_nav_menu( $menuParameters );
                 ?>
-                
+                <!--<form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>-->
                 
             </nav>
         

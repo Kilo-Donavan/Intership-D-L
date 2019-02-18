@@ -21,7 +21,7 @@ function lecana_theme_support()
   add_theme_support('post-thumbnails');
 
   //Activer les posts formats
-  add_theme_support( 'post-formats', array('aside', 'gallery'));
+  add_theme_support( 'post-formats', array('aside', 'gallery', 'action'));
 
     
     add_theme_support('custom-logo', array(
@@ -38,6 +38,37 @@ function lecana_register_menus() {
     'footer' => __( 'Pied de page' ),
   ) );
 
+}
+
+// Activation des Widget en pied de page
+
+add_action( 'widgets_init', 'widgets_footer_init' );
+function widgets_footer_init() {
+
+	$args = array(
+		'id'            => 'sidebar-menu1',
+		'name'          => __( 'Information pied de page', 'text_domain' ),
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'sidebar-menu2',
+		'name'          => __( 'Contact pied de page', 'text_domain' ),
+	);
+	register_sidebar( $args );
+
+	$args = array(
+		'id'            => 'sidebar-menu3',
+		'name'          => __( 'Crédits pied de page', 'text_domain' ),
+	);
+	register_sidebar( $args );
+    
+    $args = array(
+		'id'            => 'sidebar-menu4',
+		'name'          => __( 'Réseaux Sociaux', 'text_domain' ),
+	);
+	register_sidebar( $args );
+    
 }
 
 add_action( 'wp_enqueue_scripts', 'enqueue_bootstrap' );
@@ -70,3 +101,5 @@ function enqueue_my_scripts() {
 
     wp_enqueue_script( 'Bootstrap', '//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', array('jquery'), true);
 }
+
+/************** EXTRAITS ARTICLES ***************/

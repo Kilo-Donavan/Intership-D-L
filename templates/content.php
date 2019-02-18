@@ -1,13 +1,14 @@
 <article>
   <header>
-    <h3 class="align-center">
-      <a href="<?php the_permalink(); ?>" title="En savoir plus">
+    <h1 class="align-center">
         <?php the_title(); ?>
-      </a>
-    </h3>
+    </h1>
   </header>
-<?php if ( has_post_thumbnail() ) : ?>
+
+    <div class="content">
+        <?php the_content(); ?>
+    </div>
+</article>
+    <?php if ( has_post_thumbnail() ) : ?>
   <?php the_post_thumbnail('full');?>
 <?php endif; ?>
-
-</article>

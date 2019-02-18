@@ -20,6 +20,10 @@ body{
 * li {
     list-style: none;
 }
+* ul {
+    margin: 0;
+    padding: 0;
+}
 
 img {
   max-width : 100%;
@@ -31,22 +35,56 @@ img {
 }*/
 .align-center {
     text-align: center;
+    margin-top: 1rem;
+}
+.container {
+    min-height: 56vh;
 }
 
 
 /******************* NAVIGATION *****************/
 
+.text-light {
+    margin-left: 2em;
+    text-transform: uppercase;
+}
+#menu {
+    margin-right: 1em;
+}
+/*
+#menu li ul li:hover {
+    border-radius: 14px;
+    background-color: black;
+}
+*/
 
-
+.bandeau-logo {
+    height:auto;
+    background: #F7F9EE;
+    width: 100%;
+}
+.bandeau-logo figure {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 /*********************** FOOTER *************************/
 
-footer {
+.feet {
     background-color: #1B1B1A;
     color: #fff;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em 0;
 }
-footer p {
-    margin: 0;
-    padding: 10px;
+/*
+.feet section {
+    width: calc(100%/3);
 }
+.feet section:nth-child(2),
+.feet section:nth-child(3) {
+    display: flex;
+    justify-content: center;
+}*/

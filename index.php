@@ -13,5 +13,9 @@
     <?php endif;  ?>
     
 </main>
+<div class='bandeau-logo'>
+        
+   
+    </div>
 
 <?php get_footer(); ?>   
